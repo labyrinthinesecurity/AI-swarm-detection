@@ -132,8 +132,8 @@ Negative slope: coordination fades with scale (decaying clusters)
 
 
 
-Interpreting Results
-Output Format
+## Results Output Format
+```
 ======================================================================
 Tier 3: Hierarchical Magnetization Analysis
 ======================================================================
@@ -155,49 +155,33 @@ Swarm Detection:
   Classification:           LOW
   Interpretation:           Legitimate / Random traffic
 ======================================================================
-Classification Thresholds
-Primary MSlopeClassificationInterpretation< 0.25anyLOWLegitimate / random traffic0.25-0.35anyMEDIUMWeak clustering / distributed anomalies> 0.35> 0.10HIGHHierarchical swarm (coherence strengthens)> 0.35-0.05 to 0.10HIGHPersistent coordinated swarm> 0.35< -0.05MEDIUM-HIGHDecaying clusters (fading coherence)
-Example Interpretations
-Legitimate Traffic:
-Primary M: 0.129, Fine-scale M: 0.126, Slope: 0.008
-→ LOW: All M values near 0, minimal evolution across scales
-→ Peers behave independently, no spatial coordination
-Coordinated Swarm:
-Primary M: 0.673, Fine-scale M: 0.491, Slope: 0.107
-→ HIGH: Strong magnetization that grows with scale
-→ Local clusters of anomalous behavior merge into global coordination
-→ Signature of hierarchical command structure
-Flash Crowd (legitimate sudden clustering):
-Primary M: 0.450, Fine-scale M: 0.420, Slope: -0.08
-→ MEDIUM-HIGH: Strong local signal but fades at larger scales
-→ Spatial clustering without behavioral coordination
-Usage
-Basic Example
-pythonfrom swarm import generate_peers, generate_moran_balls, kadanoff_aggregation, tier3_summary
+```
 
-# Generate synthetic peer population
+## Usage
+Basic Example
+```python
+from swarm import generate_peers, generate_moran_balls, kadanoff_aggregation, tier3_summary
+```
+
+### Generate synthetic peer population
+```
 peers = generate_peers(
     n_peers=100,
     domain_size=(100, 100),
     scenario="Legitimate",  # or "Swarm", "Mixed", "Directional"
     seed=42
 )
+```
 
-# Compute local spin fields
-moran_balls = generate_moran_balls(peers, ambient_field_spin=1)
-
-# Hierarchical analysis
-levels = kadanoff_aggregation(
-    moran_balls,
-    levels=8,
-    initial_block_size=12.5
-)
-
-# Display results and classification
+### Display results and classification
+```
 results = tier3_summary(levels)
 print(f"Swarm probability: {results['swarm_probability']}")
-Analyzing Real Data
+```
+
+### Analyzing Real Data
 To use with real network data, provide peers as a list of dictionaries:
+```
 pythonpeers = [
     {
         'alpha': 2.8,        # Heavy-tail exponent
@@ -207,7 +191,9 @@ pythonpeers = [
     },
     # ... more peers
 ]
-Scenarios Tested
+```
+
+## Scenarios Tested
 The code includes four test scenarios:
 
 Legitimate P2P: Normal distributed traffic (α≈3, κ≈5, H≈0.55)

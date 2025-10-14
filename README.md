@@ -6,6 +6,10 @@ This repository implements a novel approach to detecting coordinated swarm behav
 
 Rather than relying on rule-based heuristics, the system maps behavioral network metrics onto a physical "spin field" and uses hierarchical spatial correlation analysis to detect emergent coordination patterns.
 
+## In-depth framework
+
+Please refer to the full research paper (https://github.com/labyrinthinesecurity/AI-swarm-detection/blob/main/swarm.pdf) for mathematical foundations.
+
 ## Background
 
 Traditional botnet detection methods struggle with decentralized swarms because:

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository implements a novel approach to detecting coordinated swarm behavior in peer-to-peer (P2P) networks using concepts from statistical physics. The method applies Ising model spin dynamics and renormalization group theory to identify spatial patterns that distinguish legitimate distributed traffic from coordinated botnets or malicious swarms.
+This repository implements a novel approach to detecting coordinated swarm behavior in peer-to-peer (P2P) networks using concepts from statistical physics. The method applies Ising model spin dynamics to identify spatial patterns that distinguish legitimate distributed traffic from coordinated botnets or malicious swarms.
 
 Rather than relying on rule-based heuristics, the system maps behavioral network metrics onto a physical "spin field" and uses hierarchical spatial correlation analysis to detect emergent coordination patterns.
 

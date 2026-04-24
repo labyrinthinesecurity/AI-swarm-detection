@@ -8,7 +8,7 @@ Rather than relying on rule-based heuristics, the system maps behavioral network
 
 ## In-depth framework
 
-Please refer to the full research paper (https://github.com/labyrinthinesecurity/AI-swarm-detection/blob/main/swarm.pdf) for mathematical foundations.
+Please refer to the full research paper (to be announced) for mathematical foundations.
 
 ## Background
 
